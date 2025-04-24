@@ -11,6 +11,32 @@ Welcome to BitGeek Software's development standards and project bootstrapping re
 - [🤝 Contribution Guidelines](docs/boilerplate/CONTRIBUTING_TEMPLATE.md)
 - [🎫 Issue Templates](docs/boilerplate/TICKET_TEMPLATE.md)
 - [📝 Changelog Standards](docs/boilerplate/CHANGELOG_TEMPLATE.md)
+- [✅ Major Features Tracking](docs/boilerplate/MAJOR_FEATURES_TEMPLATE.md)
+
+## 🤖 Getting Started with AI Agents
+
+This section helps AI agents (like Claude or GitHub Copilot) understand how to work with this project effectively.
+
+### Project Entry Points
+
+- **Main application code**: Start exploring from `app/` directory
+- **Documentation templates**: Check `docs/boilerplate/` for standardized templates
+- **Current MVP status**: Review `MAJOR_FEATURES.md` at the root for progress tracking
+
+### Understanding Naming Conventions
+
+- **Tickets**: All referenced as `PROJECT-XXX` (e.g., `AV-175`)
+- **Ad-hoc scripts**: Always named as `TICKET-XXX_purpose.py`
+- **Directories**: Each has a `README.md` explaining its purpose
+
+### Recommended Analysis Path
+
+1. First review project structure in the main `README.md`
+2. Check `MAJOR_FEATURES.md` to understand current priorities
+3. Examine relevant ticket documentation in `tickets/` directory
+4. Look for related code in `app/` or ad-hoc scripts in `adhoc/`
+
+When implementing new features, always verify if similar functionality already exists and maintain consistent naming conventions.
 
 ## 💡 Development Philosophy
 
@@ -21,6 +47,7 @@ At BitGeek Software, we prioritize:
 - **🔄 Consistency**: Common patterns and practices across all projects
 - **🔒 Security**: Proactive security measures at every development stage
 - **👥 Collaboration**: Clear communication and knowledge sharing
+- **🎯 Focus**: Maintaining project momentum through rigorous task tracking
 
 ## 📂 Project Structure
 
@@ -34,6 +61,8 @@ project/
 │   └── ...
 ├── scripts/                     # Application scripts
 ├── testing/                     # Test files and results
+├── tickets/                     # Ticket documentation and tracking
+├── adhoc/                       # Ad-hoc scripts (always tied to tickets)
 ├── .env                         # Environment variables
 ├── LICENSE                      # License file
 ├── README.md                    # Main README
@@ -82,6 +111,12 @@ python scripts/init_project.py --name "My Project Name"
 
 5. Update the README.md and other documentation files with your project specifics.
 
+6. Set up the Major Features tracking document:
+
+```bash
+cp docs/boilerplate/MAJOR_FEATURES_TEMPLATE.md MAJOR_FEATURES.md
+```
+
 ## 📚 Documentation Standards
 
 All BitGeek Software projects maintain comprehensive documentation:
@@ -91,6 +126,7 @@ All BitGeek Software projects maintain comprehensive documentation:
 - **CONTRIBUTING.md**: Contribution guidelines
 - **CHANGELOG.md**: Record of all notable changes
 - **Directory READMEs**: Purpose explanation for each major directory
+- **MAJOR_FEATURES.md**: Tracks implementation progress toward MVP and beyond
 
 Documentation should be written in Markdown and follow our templates in the `docs/boilerplate/` directory.
 
@@ -115,10 +151,48 @@ git push origin vX.Y.Z
 
 ## 🎫 Issue & Ticketing System
 
+### Importance of Proper Ticketing
+
+**Tickets are the cornerstone of our development process**. They provide:
+- Clear record of what needs to be done and why
+- Traceability from requirement to implementation
+- Accountability for tasks and features
+- Historical context for future development
+- Structure to organize and prioritize work
+
+### Ticketing Guidelines
+
+- All development work **MUST** have an associated ticket
 - All issues/tickets use our [standard template](docs/boilerplate/TICKET_TEMPLATE.md)
 - Ticket IDs follow the pattern: `PROJECT-XXX` (e.g., `AV-175`)
-- Ad-hoc scripts must reference ticket numbers (e.g., `AV-175_improved_verification_guide.py`)
-- Tickets should contain comprehensive information including implementation details and validation criteria
+- Tickets should be created before work begins
+- Tickets must contain comprehensive information including:
+  - Clear implementation details
+  - Validation criteria
+  - Acceptance criteria
+  - Related files/components
+  - Testing requirements
+
+### Ad-hoc Scripts & Naming Conventions
+
+Ad-hoc scripts are valuable for testing, validation, and one-off tasks, but must be managed properly:
+
+- **Every** ad-hoc script **MUST** reference a ticket number in its filename
+  - Correct: `AV-175_improved_verification_guide.py`
+  - Incorrect: `fix_database_issue.py`
+- Ad-hoc scripts must be stored in the `adhoc/` directory
+- Include a comment header in each script referencing the ticket and purpose
+- Document in the ticket when an ad-hoc script is created and its purpose
+
+### Major Features Tracking
+
+To maintain project focus and momentum:
+
+- Use the [Major Features template](docs/boilerplate/MAJOR_FEATURES_TEMPLATE.md) to track progress
+- Update feature statuses during sprint reviews
+- Ensure each feature is linked to a specific ticket
+- Review the features document when prioritizing new work
+- Keep MVP features clearly separated from future enhancements
 
 ## 💻 Code Style
 
