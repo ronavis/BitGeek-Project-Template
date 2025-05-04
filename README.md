@@ -1,3 +1,8 @@
+> 💤 **Note:** This project was an early experiment that evolved into something much bigger — [**Mid Conversation**](https://github.com/ronavis/mid-conversation-starter-kit).  
+> BitGeek was a spark — Mid Conversation is the flame. Follow along and see how far we go.
+
+
+
 # 🚀 BitGeek Software Development Standards
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)](VERSION)
